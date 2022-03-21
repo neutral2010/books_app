@@ -1,9 +1,11 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  get 'users/index'
+  get 'users/show'
+  devise_for :users
   # get 'users/index'
   # get 'users/show'
-  devise_for :users
   resources :users, only: %i[index show desroy]
   resources :books
   root to: 'books#index'
